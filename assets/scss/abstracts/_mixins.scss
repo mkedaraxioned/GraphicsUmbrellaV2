@@ -1,0 +1,47 @@
+@mixin flex( $direction: false, $jc: false,  $ai: false) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $ai;
+  }
+
+
+  @mixin media-max($width) {
+    @media screen and (max-width:$width) {
+      @content;
+    }
+  }
+  
+  @mixin media-min($width) {
+    @media screen and (min-width:$width) {
+      @content;
+    }
+  }
+  
+  @mixin  feature-icons {
+    color: $color_white;
+    font-family: "FontAwesome";
+    font-size: 87px;
+  }
+
+  @mixin dashed-lines {
+    &::before {
+      content: " ";
+      width: 45px;
+      border-top: 2px #eaeaea dashed;
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      left: -5%;
+      }
+  
+      &::after {
+      content: " ";
+      width: 60%;
+      border-top: 2px #eaeaea dashed;
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      }
+  }

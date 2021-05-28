@@ -1,0 +1,17 @@
+/* form validation starts here */
+
+.hide-img { display: none; }
+  
+.show-img { display: block; }
+
+.hide-element { display: none; }
+
+.show-element { display: block; }
+
+.footer .span-error.show-element { display: block; }
+
+.outline-red { outline: 2px solid $color_red; }
+
+.span-error { color:$color_red; }
+
+/* form validation ends here */

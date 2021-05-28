@@ -1,0 +1,224 @@
+/*=================================
+  footer styling starts here
+=================================*/
+
+.footer {
+  font-size: 14px;
+
+  .wrapper {
+    width: 100%;
+    padding: 48px 0 33px;
+  }
+
+  &__top-div {
+    width: 57.22%;
+    margin: 0 auto;
+    @include flex(null,space-between,null);
+
+    @include media-max(1024px) {
+      flex-wrap: wrap;
+
+      &>div {
+        margin-top: 50px;
+        flex-basis: 46%;
+      }
+    }
+
+    @include media-max(767px) {
+      & > div {  flex-basis: 100%;  }
+    }
+
+    h4 { margin-bottom: 20px; }
+
+    p {
+      margin-bottom: 30px;
+
+      span {  font-weight: bold;   }
+    }
+  }
+
+
+
+
+  &__left-div {  flex-basis: 21.57%; }
+
+  &__middle-left {  flex-basis: 20.66%;    }
+
+  &__middle-right {  flex-basis: 20.66%;   }
+
+  &__socail-list {
+    @include flex(null, space-between, null);
+
+    li {
+      a::before {
+        font-family: "FontAwesome";
+        font-size: 28px;
+        color: $color_lightgray;
+        transition: .3s ease-in;
+      }
+
+      a {
+        &:hover {
+          text-shadow: 0 0 15px $color_green;
+
+          &::before {       color: $color_lightgreen;        }
+        }
+      }
+
+      &:nth-child(1) a::before {   content: "\f09a ";       }
+
+      &:nth-child(2) a::before {   content: "\f099  ";       }
+
+      &:nth-child(3) a::before {   content: "\f09e  ";      }
+
+      &:nth-child(4) a::before {   content: "\f27d  ";      }
+
+      &:nth-child(5) a::before {    content: "\f0ac ";      }
+
+      &:nth-child(6) a::before {    content: "\f0c0 ";      }
+
+      span {
+        display: inline-block;
+        text-indent: -9999px;
+      }
+    }
+  }
+
+  &__archieves-list {
+    li {
+      padding: 18px 0;
+      border-top: 1px dashed $color_palewhite;
+      display: block;
+
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+
+    a {    color: $color_black;      }
+  }
+
+  &__contactus-list {
+    li {
+      padding: 18px 0;
+      border-top: 1px dashed $color_palewhite;
+      display: block;
+
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+
+      a::before {
+        margin-right: 10px;
+        font-family: "FontAwesome";
+        font-size: 28px;
+        color: $color_lightgray;
+        transition: .3s ease-in;
+
+
+      }
+
+
+      a:hover::before {      color: $color_lightgreen;       }
+
+      &:nth-child(1) a::before {      content: "\f003  ";       }
+
+      &:nth-child(2) a::before {      content: "\f095  ";      }
+
+      &:nth-child(3) a::before {       content: "\f09e  ";      }
+
+      &:nth-child(4) a::before {      content: "\f10b  ";       }
+    }
+
+    a {
+      @include flex(null,null,center);
+      color: $color_black;
+    }
+  }
+
+  &__right-div {
+    flex-basis: 21.4%;
+  }
+
+  .span-error {     display: none; }
+
+  h4 {
+    font-size: 21px;
+    text-transform: uppercase;
+  }
+
+  .form-ip {
+    width: 100%;
+    padding: 13px 2%;
+    border: none;
+    border-bottom: 1px solid $color_gray;
+    background-color: $color_brightwhite;
+  }
+
+  .submit-btn {
+    padding: 15px 2%;
+    margin: 20px 0;
+    border: none;
+    background-color: $color_green;
+    color: $color_white;
+    font-size: 16px;
+    float: right;
+  }
+
+  &_bottom-div {
+    padding: 5px 0;
+    background-color: $color_black;
+    color: $color_white;
+
+    &__inner {
+      width: 57.22%;
+      margin: 0 auto;
+      @include flex(null, space-between, null);
+
+      @include media-max(767px) {
+        flex-direction: column;
+
+        span {
+          margin-top: 25px;
+          text-align: center;
+        }
+      }
+    }
+
+    a {
+      color: $color_white;
+      text-transform: uppercase;
+    }
+
+  }
+
+  &__bottom-list {
+    display: flex;
+
+    @include media-max(767px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    li {  margin: 0 12px 20px 0;  }
+
+    a {
+      transition: .5s ease;
+
+      &:hover {
+        color: $color_lightgreen;
+        @include media-max(767px) { color: initial; }
+      }
+    }
+  }
+}
+
+
+
+
+
+/*=================================
+  footer styling ends here
+=================================*/
