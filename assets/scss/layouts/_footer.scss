@@ -13,12 +13,13 @@
   &__top-div {
     width: 57.22%;
     margin: 0 auto;
+    @include media-max(767px)  { width: 90%; }
     @include flex(null,space-between,null);
 
     @include media-max(1024px) {
       flex-wrap: wrap;
 
-      &>div {
+      & > div {
         margin-top: 50px;
         flex-basis: 46%;
       }
@@ -181,7 +182,7 @@
         flex-direction: column;
 
         span {
-          margin-top: 25px;
+          margin: 25px 0 25px;
           text-align: center;
         }
       }
@@ -196,13 +197,18 @@
 
   &__bottom-list {
     display: flex;
-
+    
     @include media-max(767px) {
+      margin-top: 25px;
       flex-direction: column;
       text-align: center;
     }
 
-    li {  margin: 0 12px 20px 0;  }
+    li {  
+      margin-right:12px;
+      @include media-max(767px) { margin: 0 12px 20px 0;  }
+      }
+
 
     a {
       transition: .5s ease;
@@ -216,7 +222,11 @@
 }
 
 
-
+.show-to-top.back-to-top {
+  opacity: 1;
+  visibility: visible;
+}
+  
 
 
 /*=================================

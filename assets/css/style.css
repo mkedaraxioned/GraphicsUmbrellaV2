@@ -134,6 +134,11 @@ header .wrapper {
   /* hamburger css starts here*/
   /* hamburger css ends here*/
 }
+@media screen and (max-width: 1023px) {
+  header .wrapper {
+    width: 90%;
+  }
+}
 header .wrapper .brand-name {
   flex-basis: 28.74%;
 }
@@ -242,6 +247,65 @@ header .wrapper .show {
 }
 
 @media screen and (max-width: 1023px) {
+  /* hamburger styling starts here */
+  .hamburger-div {
+    width: 60px;
+    height: 45px;
+    margin: 10px auto;
+    display: block;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
+    cursor: pointer;
+  }
+
+  .hamburger-div span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #8db542;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transition: 0.25s ease-in-out;
+    transform: rotate(0deg);
+    text-indent: -9999px;
+  }
+
+  .hamburger-div span:nth-child(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+
+  .hamburger-div span:nth-child(2) {
+    top: 18px;
+    transform-origin: left center;
+  }
+
+  .hamburger-div span:nth-child(3) {
+    top: 36px;
+    transform-origin: left center;
+  }
+
+  .hamburger-div.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+
+  .hamburger-div.active span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .hamburger-div.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+
+  /* hamburger styling ends here */
   /* Seperate Header css starts here */
   .header-effect {
     width: 100vw;
@@ -330,7 +394,6 @@ header .wrapper .show {
   }
 
   header .wrapper nav {
-    margin-right: 10%;
     flex-basis: 50%;
   }
 
@@ -436,6 +499,11 @@ header .wrapper .show {
 }
 .welcome-section .wrapper {
   padding-top: 37px;
+}
+@media screen and (max-width: 767px) {
+  .welcome-section .wrapper {
+    width: 90%;
+  }
 }
 .welcome-section__title {
   position: relative;
@@ -553,6 +621,11 @@ header .wrapper .show {
 .portfolio-section .wrapper {
   padding-top: 60px;
 }
+@media screen and (max-width: 767px) {
+  .portfolio-section .wrapper {
+    width: 90%;
+  }
+}
 .portfolio-section h3 {
   margin-left: 5%;
   position: relative;
@@ -660,6 +733,11 @@ header .wrapper .show {
 .advertisers-section .wrapper {
   padding: 64px 0 122px;
 }
+@media screen and (max-width: 767px) {
+  .advertisers-section .wrapper {
+    width: 90%;
+  }
+}
 .advertisers-section h2 {
   margin-left: 5%;
   position: relative;
@@ -692,11 +770,17 @@ header .wrapper .show {
   display: flex;
 }
 .advertisers-section .back-to-top {
-  padding: 14px 1.5%;
+  padding: 14px;
   margin-top: 60px;
   border-radius: 50%;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 15;
   background-color: #8db542;
-  float: right;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
 }
 .advertisers-section .back-to-top span {
   display: inline-block;
@@ -760,6 +844,11 @@ header .wrapper .show {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .footer__top-div {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .footer__top-div {
@@ -921,7 +1010,7 @@ header .wrapper .show {
     flex-direction: column;
   }
   .footer_bottom-div__inner span {
-    margin-top: 25px;
+    margin: 25px 0 25px;
     text-align: center;
   }
 }
@@ -934,12 +1023,18 @@ header .wrapper .show {
 }
 @media screen and (max-width: 767px) {
   .footer__bottom-list {
+    margin-top: 25px;
     flex-direction: column;
     text-align: center;
   }
 }
 .footer__bottom-list li {
-  margin: 0 12px 20px 0;
+  margin-right: 12px;
+}
+@media screen and (max-width: 767px) {
+  .footer__bottom-list li {
+    margin: 0 12px 20px 0;
+  }
 }
 .footer__bottom-list a {
   transition: 0.5s ease;
@@ -951,6 +1046,11 @@ header .wrapper .show {
   .footer__bottom-list a:hover {
     color: initial;
   }
+}
+
+.show-to-top.back-to-top {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*=================================

@@ -81,7 +81,10 @@
 .welcome-section {
   background-image: url("../img/bg.jpg");
 
-  .wrapper {    padding-top: 37px;   }
+  .wrapper {    
+    padding-top: 37px;   
+    @include media-max(767px)  { width: 90%; }
+  }
 
   &__title {
     position: relative;
@@ -189,7 +192,10 @@
 .portfolio-section {
   background-image: url("../img/bg.jpg");
 
-  .wrapper {     padding-top: 60px;    }
+  .wrapper {     
+    padding-top: 60px;    
+    @include media-max(767px)  { width: 90%; }
+  }
 
   h3 {
     margin-left: 5%;
@@ -288,6 +294,7 @@
 
   .wrapper {
     padding: 64px 0 122px;
+    @include media-max(767px)  { width: 90%; }
   }
 
   h2 {
@@ -309,11 +316,17 @@
   }
 
   .back-to-top {
-    padding: 14px 1.5%;
+    padding: 14px;
     margin-top: 60px;
     border-radius: 50%;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 15;
     background-color: $color_green;
-    float: right;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
 
     span {
       display: inline-block;

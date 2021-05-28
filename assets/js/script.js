@@ -3,36 +3,19 @@
 */
 $(document).ready(function() {
 
-  // Hamburger menu start
-  var cross = $(".cross");
-  var hamburger = $(".hamburger");
-  var html_tag = $("html");
-  var header_tag = $("header");
-  var navbar = $(".navbar");
-  var nav_tag = $(".nav:first-of-type");
-  var captcha =$(".captcha-fig");
-  cross.hide();
-  hamburger.click(function () {
-    cross.show();
-    $(this).hide();
-    navbar.toggleClass("hide-menu-item");
-    navbar.toggleClass("hamburger-menu");
-    header_tag.toggleClass("header-effect");
-    html_tag.toggleClass("no-scroll");
-    nav_tag.slideToggle("slow");
-    captcha.toggleClass("hide-element");
-  });
+    // Hamburger menu start
 
-  cross.click(function () {
-    cross.hide();
-    hamburger.show();
-    navbar.toggleClass("hamburger-menu");
+	$('.hamburger-div').click(function(){
+    var html_tag = $("html");
+    var header_tag = $("header");
+    var navbar = $(".navbar");
+		$(this).toggleClass('active');
     navbar.toggleClass("hide-menu-item");
+    navbar.toggleClass("hamburger-menu");
     header_tag.toggleClass("header-effect");
     html_tag.toggleClass("no-scroll");
-    nav_tag.slideToggle("slow");
-    captcha.toggleClass("hide-element");
-  });   
+	});
+
   // Hamburger menu end
 
     // sliders 
@@ -87,14 +70,24 @@ $(document).ready(function() {
     });
 
 
-    var back_to_top =$(".back-to-top");
-    back_to_top.on("click",move_to_top);
-    // back to top
-    function move_to_top() {
-        document.documentElement.scrollTop = 0; 
-        document.body.scrollTop = 0;
-      }
+      $(window).on('resize scroll', function() {
+        var viewport_top = $(window).scrollTop();
+        var top_of_page =$(".back-to-top");
+        if(viewport_top>=300) {
+          top_of_page.addClass("show-to-top");
+          top_of_page.on("click",move_to_top);
+          // back to top
+          function move_to_top() {
+              document.documentElement.scrollTop = 0; 
+              document.body.scrollTop = 0;
+            }
+        }
+        else {
+          top_of_page.removeClass("show-to-top");
+        }
 
+
+      });
 
      // form validation 
 
